@@ -22,8 +22,8 @@ global $paset, $pageavatar;
 
 $catp = cot_import('rpagecat', 'P', 'TXT');
 $catp_p = cot_structure_parents('page', $catp, 'first');
-$paset = ($sets[$catp_p]) ? $sets[$catp_p] : $sets['all'];
-$paset = ($sets[$catp]) ? $sets[$catp] : $paset;
+$paset = (isset($sets[$catp_p])) ? $sets[$catp_p] : $sets['all'];
+$paset = (isset($sets[$catp])) ? $sets[$catp] : $paset;
 
 $pageavatar = (isset($_FILES['pageavatar']) && ($_FILES['pageavatar']['error'] == UPLOAD_ERR_OK) ) ? $_FILES['pageavatar'] : null;
 

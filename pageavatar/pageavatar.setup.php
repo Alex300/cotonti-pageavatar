@@ -4,10 +4,10 @@
 Code=pageavatar
 Name=Page Avatar
 Description=Page Avatar plugin enables you to upload, replace and delete images for a specific page bypassing PFS
-Version=4.03
-Date=2013-02-05
-Author=esclkm, Seditio.by
-Copyright=&copy; esclkm
+Version=4.0.4
+Date=2023-04-20
+Author=esclkm, Seditio.by, Cotonti Team
+Copyright=&copy; esclkm, Seditio.by, Cotonti Team 2011-2023
 Notes=
 Auth_guests=R
 Lock_guests=W12345A
@@ -24,12 +24,7 @@ field=02:string::avatar:field name
 
 /**
  * Pageavatar for Cotonti CMF
- *
- * @version 4.00
- * @author  esclkm
- * @copyright (c) 2011 esclkm
  */
 
 defined('COT_CODE') or die('Wrong URL.');
 
-?>

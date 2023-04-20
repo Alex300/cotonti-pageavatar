@@ -48,8 +48,7 @@ else
 {
 	$sets = $pav_sets;
 }
-if (!$sets['all'])
-{
+if (empty($sets['all'])) {
 	$sets['all'] = array(
 		'path' => 'datas/photos/',
 		'thumbs' => array(),
@@ -59,7 +58,7 @@ if (!$sets['all'])
 	);
 }
 
-if (!function_exists(cot_thumb))
+if (!function_exists('cot_thumb'))
 {
 
 	/**

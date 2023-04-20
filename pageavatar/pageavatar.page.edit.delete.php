@@ -22,14 +22,14 @@ $catp_p = cot_structure_parents('page', $catp, 'first');
 $paset = ($sets[$catp_p]) ? $sets[$catp_p] : $sets['all'];
 $paset = ($sets[$catp]) ? $sets[$catp] : $paset;
 
-$filename = $paset['path'].$row['page_'.$cfg['plugin']['pageavatar']['field']];
+$filename = $paset['path'].$row_page_delete['page_'.$cfg['plugin']['pageavatar']['field']];
 if (file_exists($filename))
 {
 	@unlink($filename);
 }
 foreach ($paset['thumbs'] as $key => $val)
 {
-	$newfilename = $paset['path'].$key.$row['page_'.$cfg['plugin']['pageavatar']['field']];
+	$newfilename = $paset['path'].$key.$row_page_delete['page_'.$cfg['plugin']['pageavatar']['field']];
 	if (file_exists($newfilename))
 	{
 		@unlink($newfilename);

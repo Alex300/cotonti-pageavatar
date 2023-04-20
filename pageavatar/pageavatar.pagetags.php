@@ -23,15 +23,10 @@ global $paset, $pageavatar, $sets;
 $catp = $page_data['page_cat'];
 $catp_p = cot_structure_parents('page', $catp, 'first');
 
-$paset = ($sets[$catp_p]) ? $sets[$catp_p] : $sets['all'];
-$paset = ($sets[$catp]) ? $sets[$catp] : $paset;
+$paset = (!empty($sets[$catp_p])) ? $sets[$catp_p] : $sets['all'];
+$paset = (!empty($sets[$catp])) ? $sets[$catp] : $paset;
 
 $rpageavatar = $page_data['page_'.$cfg['plugin']['pageavatar']['field']];
-$temp_array['PAVATAR'] = '';
-foreach ($paset['thumbs'] as $key => $val)
-{
-	$temp_array[mb_strtoupper($key).'PAVATAR'] = '';
-}	
 if (!empty($rpageavatar))
 {
 	$filename = $paset['path'].$rpageavatar;
@@ -46,6 +41,14 @@ if (!empty($rpageavatar))
 		{
 			$temp_array[mb_strtoupper($key).'PAVATAR'] = $newfilename;
 		}
+	}
+}
+else
+{
+	$temp_array['PAVATAR'] = '';
+	foreach ($paset['thumbs'] as $key => $val)
+	{
+		$temp_array[mb_strtoupper($key).'PAVATAR'] = '';
 	}
 }
 ?>
