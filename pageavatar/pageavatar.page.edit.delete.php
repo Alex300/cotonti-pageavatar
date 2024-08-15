@@ -1,5 +1,4 @@
 <?php
-
 /* ====================
 [BEGIN_COT_EXT]
 Hooks=page.edit.delete.done
@@ -9,30 +8,29 @@ Hooks=page.edit.delete.done
 /**
  * Pageavatar for Cotonti CMF
  *
- * @version 4.00
- * @author  esclkm
- * @copyright (c) 2011 esclkm
+ * @author  esclkm, Seditio.by, Cotonti Team
+ * @copyright (c) esclkm, Seditio.by, Cotonti Team
+ *
+ * @var array $rpage Page data
  */
 defined('COT_CODE') or die('Wrong URL');
 
+global $sets;
+
 require_once cot_incfile('pageavatar', 'plug');
 
-$catp = $rpagecat;
+$catp = $rpage['page_cat'];
 $catp_p = cot_structure_parents('page', $catp, 'first');
-$paset = ($sets[$catp_p]) ? $sets[$catp_p] : $sets['all'];
-$paset = ($sets[$catp]) ? $sets[$catp] : $paset;
+$paset = isset($sets[$catp_p]) ? $sets[$catp_p] : $sets['all'];
+$paset = isset($sets[$catp]) ? $sets[$catp] : $paset;
 
-$filename = $paset['path'].$row_page_delete['page_'.$cfg['plugin']['pageavatar']['field']];
-if (file_exists($filename))
-{
+$filename = $paset['path'] . $rpage['page_'.Cot::$cfg['plugin']['pageavatar']['field']];
+if (file_exists($filename)) {
 	@unlink($filename);
 }
-foreach ($paset['thumbs'] as $key => $val)
-{
-	$newfilename = $paset['path'].$key.$row_page_delete['page_'.$cfg['plugin']['pageavatar']['field']];
-	if (file_exists($newfilename))
-	{
+foreach ($paset['thumbs'] as $key => $val) {
+	$newfilename = $paset['path'] . $key . $rpage['page_' . Cot::$cfg['plugin']['pageavatar']['field']];
+	if (file_exists($newfilename)) {
 		@unlink($newfilename);
 	}
 }
-?>

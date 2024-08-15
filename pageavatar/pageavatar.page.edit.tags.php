@@ -21,5 +21,3 @@ $t->assign(array(
     "PAGEEDIT_FORM_AVATAR" => '<input type="hidden" name="rpageavatar" value="'.$pag['page_'.$cfg['plugin']['pageavatar']['field']].'" /><input type="file" class="file" name="pageavatar" size="56"/>',
 	"PAGEEDIT_FORM_AVATARDELETE" => "<input type=\"radio\" class=\"radio\" name=\"rpageavatardelete\" value=\"1\" />".$L['Yes']." <input type=\"radio\" class=\"radio\" name=\"rpageavatardelete\" value=\"0\" checked=\"checked\" />".$L['No']
 ));
-
-?>

@@ -7,7 +7,7 @@ Description=Page Avatar plugin enables you to upload, replace and delete images 
 Version=4.0.4
 Date=2023-04-20
 Author=esclkm, Seditio.by, Cotonti Team
-Copyright=&copy; esclkm, Seditio.by, Cotonti Team 2011-2023
+Copyright=&copy; esclkm, Seditio.by, Cotonti Team 2011-2024
 Notes=
 Auth_guests=R
 Lock_guests=W12345A
@@ -23,7 +23,10 @@ field=02:string::avatar:field name
 ==================== */
 
 /**
- * Pageavatar for Cotonti CMF
+ * Pageavatar plugin for Cotonti CMF
+ *
+ * @author  esclkm, Seditio.by, Cotonti Team
+ * @copyright (c) esclkm, Seditio.by, Cotonti Team
  */
 
 defined('COT_CODE') or die('Wrong URL.');
